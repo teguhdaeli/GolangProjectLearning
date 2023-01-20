@@ -22,6 +22,15 @@ func registerUser(nameUser string, bl Blacklist){
 	}
 }
 
+type FilterUser func(int, string)bool
+func userCheck(idUser int, nameUser1 string, fu FilterUser){
+	if fu(idUser) && fu(nameUser1){
+		fmt.Println("User dan ID Tersedia: ", idUser, "<->", nameUser1)
+	}else{
+		fmt.Println("User dan ID tidak ditemukan!")
+	}
+}
+
 func main(){
 	//cara pertama buat panggil parameternya
 	bl := func(nameUser string)bool{
@@ -39,4 +48,12 @@ func main(){
 		Jika gunakan cara pertama, kita hanya panggil sekali dan bisa cetak berkali kali
 		Jika gunakan cara kedua, kita panggil berulang kali function dan outpuntnya
 	*/
+	for i := 0; i < 20; i++{
+		fmt.Print("-")
+	}
+
+	fu := func(idUser int, nameUser1 string)bool{
+		return idUser == 0001 && nameUser1 == "Teguh"
+	}
+	userCheck(0001,"Teguh",fu)
 }
