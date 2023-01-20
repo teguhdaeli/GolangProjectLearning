@@ -14,7 +14,7 @@ func main(){
 	type NomorHp string
 	
 	var nomorTeguh NomorHp = "082162798664"
-	fmt.Println(NomorHp, nomorTeguh)
+	fmt.Println(nomorTeguh)
 
 
 }

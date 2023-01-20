@@ -37,7 +37,7 @@ func main(){
 	//copy slice
 	copySlice1 := make([]string, len(newSlice1), cap(newSlice1))
 	copy(copySlice1,newSlice1)
-	fmt.Println(copySlice1)
+	fmt.Println(copySlice1)0
 
 	//membedakan array dan slice
 	array2 := [5]int{1,2,3,4,5}
